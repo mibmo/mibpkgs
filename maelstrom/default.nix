@@ -13,4 +13,5 @@ cljpkgs.mkCljBin rec {
   lockfile = ./deps-lock.json;
   jdkRunner = openjdk19;
   jarPath="target/${name}-${version}-standalone.jar";
+  # @TODO: figure out how to properly support "demo" mode
 }
