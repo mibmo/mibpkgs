@@ -2,20 +2,18 @@
 
 stdenv.mkDerivation rec {
   pname = "nanosvg";
-  version = "2022.12.4";
+  version = "2022.12.22";
 
   src = fetchFromGitHub {
-    owner = "memononen";
+    owner = "fltk";
     repo = pname;
-    rev = "9da543e8329fdd81b64eb48742d8ccb09377aed1";
-    sha256 = "sha256-VOiN6583DtzGYPRkl19VG2QvSzl4T9HaynBuNcvZf94=";
+    rev = "abcd277ea45e9098bed752cf9c6875b533c0892f";
+    sha256 = "sha256-WNdAYu66ggpSYJ8Kt57yEA4mSTv+Rvzj9Rm1q765HpY=";
   };
 
-  buildInputs = [ tree ];
-
   installPhase = ''
-    mkdir -p $out/include/nanosvg/
-    cp ./src/nanosvg.h $out/include/nanosvg/nanosvg.h
+    mkdir -p $out/include/
+    cp ./src/nanosvg.h $out/include/nanosvg.h
   '';
 
   meta = with lib; {
