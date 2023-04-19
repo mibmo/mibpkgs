@@ -21,6 +21,7 @@
       {
         packages = {
           maelstrom = callPackage ./maelstrom { };
+          nanosvg = callPackage ./nanosvg { };
         };
       });
 }
