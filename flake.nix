@@ -16,10 +16,11 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         cljpkgs = clj-nix.packages."${system}";
+        callPackage = pkgs.lib.callPackageWith (pkgs // { inherit cljpkgs; });
       in
       {
         packages = {
-          maelstrom = pkgs.callPackage ./maelstrom { inherit cljpkgs; };
+          maelstrom = callPackage ./maelstrom { };
         };
       });
 }
